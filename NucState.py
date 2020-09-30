@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import random
 
-class Poisson_test:
+class State_test:
     def greater( background , X ):
         if X > 0:
             Added = math.exp( - background )
@@ -248,18 +248,18 @@ def get_ml_info(ml, dataset):
     return groups, scores, centroids
 
 def transitive_closure(ml, cl, n):
-    ml_graph = dict()
-    cl_graph = dict()
+    ml_state = dict()
+    cl_state = dict()
     for i in range(n):
-        ml_graph[i] = set()
-        cl_graph[i] = set()
+        ml_state[i] = set()
+        cl_state[i] = set()
 
     def add_both(d, i, j):
         d[i].add(j)
         d[j].add(i)
 
     for (i, j) in ml:
-        add_both(ml_graph, i, j)
+        add_both(ml_state, i, j)
 
     def dfs(i, graph, visited, component):
         visited[i] = True
@@ -272,24 +272,33 @@ def transitive_closure(ml, cl, n):
     for i in range(n):
         if not visited[i]:
             component = []
-            dfs(i, ml_graph, visited, component)
+            dfs(i, ml_state, visited, component)
             for x1 in component:
                 for x2 in component:
                     if x1 != x2:
-                        ml_graph[x1].add(x2)
+                        ml_state[x1].add(x2)
     for (i, j) in cl:
-        add_both(cl_graph, i, j)
-        for y in ml_graph[j]:
-            add_both(cl_graph, i, y)
-        for x in ml_graph[i]:
-            add_both(cl_graph, x, j)
-            for y in ml_graph[j]:
-                add_both(cl_graph, x, y)
+        add_both(cl_state, i, j)
+        for y in ml_state[j]:
+            add_both(cl_state, i, y)
+        for x in ml_state[i]:
+            add_both(cl_state, x, j)
+            for y in ml_state[j]:
+                add_both(cl_state, x, y)
 
-    for i in ml_graph:
-        for j in ml_graph[i]:
-            if j != i and j in cl_graph[i]:
+    for i in ml_state:
+        for j in ml_state[i]:
+            if j != i and j in cl_state[i]:
                 raise Exception('inconsistent constraints between %d and %d' %(i, j))
-    return ml_graph, cl_graph
+    return ml_state, cl_state
 
 
+if __name__ == "__main__":
+        options, remainder = getopt.getopt(sys.argv[1:],'', ['i=','nuc_grp ='])
+        for opt, arg in options:
+            if opt == '--i': dir=arg
+            elif opt == '--nuc_grp': nuc_grp=arg
+            
+    try: State_test(dir)
+    except ZeroDivisionError:
+        print [sys.argv[1:]],'error'; error

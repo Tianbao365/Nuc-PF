@@ -19,13 +19,13 @@ Required libraries
 
 
 ## ChIP-ePEST Workflow
-# Alignment by bowtie2
+### Alignment by bowtie2
 $ bowtie2 -v 3 -k 2 -m 1 -p 15 --fr -I 20 -X 400 -S /data/reference/hg19 -1 /data/ChIP-ePEST/GATA2_veh_ChipePEST_L005_R1.fastq -2 /data/ChIP-ePEST/GATA2_veh_ChipePEST_L005_R2.fastq /data/ChIP-ePEST/vehLNCaP_GATA2_ChipePEST.R1R2.Paired.sam
 
-# Preparation for ePEST input
+### Preparation for ePEST input
 $samtools view -bhS -q 30 /data/ChIP-ePEST/vehLNCaP_GATA2_ChipePEST.R1R2.Paired.sam -o /data/ChIP-ePEST/vehLNCaP_GATA2_ChipePEST.R1R2.Paired.bam 
 
-# ChIP-ePEST border calling by ePEST
+### ChIP-ePEST border calling by ePEST
 $python ePEST.py  -D True -p 1e-8 -R 25  -t 12 -c 0.05 -k 2.0 -o ePEST_vehFOXA1 /data/yez/Projects/ChIP-exo/vehLNCaP_FoxA1_ChipEXO.R1R2.Paired.Align.bam
 
 # The results columns of ePEST could be explained by following:

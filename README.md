@@ -17,7 +17,7 @@ __Required libraries:__
 
 ## Step 1: Nucleosome positioning and spacing detection.
 MNase-seq data with MNase-ChIP-seq datasets were preferred for this pipeline (Corresponding to **Figure 1**).
-
+We did the genome-wide detection of nucleosome positions from MNase-seq data, as well as identifies sharper nucleosome profiles for nucleosome spacing detection.
 ####
 $ python NucDetect.py -i <input.bed> -t <S/P> -o <output_path/filename>  
  

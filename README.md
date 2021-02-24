@@ -1,9 +1,15 @@
 # Nuc-PF
-Introduction
+**##Introduction**
 
 Nuc-PF is a collection of tools for training nucleosome footprint with multiple histone modification datasets to find potential pioneer factor regulations. We have used Nuc-PF successfully to find GATA2 as pioneer factor in LNCap cell lines. If you wish to focus on PF-associated states (downstream of Nuc-PF), we recommend that only the PF of interest be used, although Nuc-PF supports multiple PFs.
 
-Quick Start
+**##Dependencies**
+
+Nuc-PF is written in python as several scripts and should run on any x86 64-bit Linux system, however a computer with several gigabytes of RAM is strongly recommended to avoid an out-of-memory error.
+
+Required libraries
+
+**##Quick Start (Corresponding to Figure 1)**
 Step 1: Nucleosome positioning and spacing detection.
 MNase-seq data with MNase-ChIP-seq datasets were preferred for this pipeline.
 
@@ -11,14 +17,12 @@ MNase-seq data with MNase-ChIP-seq datasets were preferred for this pipeline.
 
 
 
-Dependencies
-
-Nuc-PF is written in python as several scripts and should run on any x86 64-bit Linux system, however a computer with several gigabytes of RAM is strongly recommended to avoid an out-of-memory error.
-
-Required libraries
 
 
-##  Border Calling Workflow
+
+
+
+##  Border Calling Workflow (Corresponding to Figure 4 & Figure 5)
 #### Alignment by bowtie2
 $ bowtie2 -v 3 -k 2 -m 1 -p 15 --fr -I 20 -X 400 -S /data/reference/hg19 -1 /data/ChIP-ePEST/GATA2_veh_ChipePEST_L005_R1.fastq -2 /data/ChIP-ePEST/GATA2_veh_ChipePEST_L005_R2.fastq /data/ChIP-ePEST/vehLNCaP_GATA2_ChipePEST.R1R2.Paired.sam
 

@@ -16,7 +16,7 @@ __Required libraries:__
   * **Networkx**:   https://networkx.github.io/  
 
 ## Step 1: Nucleosome positioning and spacing detection.
-MNase-seq data with MNase-ChIP-seq datasets were preferred for this pipeline (Corresponding to Figure 1).
+MNase-seq data with MNase-ChIP-seq datasets were preferred for this pipeline (Corresponding to **Figure 1**).
 
 ####
 $ python NucDetect.py -i <input.bed> -t <S/P> -o <output_path/filename>  
@@ -34,15 +34,15 @@ Arguments |   ..
 Chrid 	Start 	End	Index_No Length Height AUC Shape -log10(p-value)
 
 ## Step 2: Nucleosome State Assignments.
-MNase-ChIP-seq datasets were generated for nucleosome footprint detection and nucleosome states (Corresponding to Figure 2).
+MNase-ChIP-seq datasets were generated for nucleosome footprint detection and nucleosome states (Corresponding to **Figure 2**).
 
 ## Step 3: Transcript facort associated with dynamic nucleosome re-organization.
-Potential pioneer factors with activation of treatment condition for detecing functional nucleosome regulators (Corresponding to Figure 3).
+Potential pioneer factors with activation of treatment condition for detecing functional nucleosome regulators (Corresponding to **Figure 3**).
 
 
 
 ##  Step 4: ChIP-ePENS Border Calling Workflow 
-Pioneer factor ChIP-ePENS analysis (Corresponding to Figure 4 & Figure 5)
+Pioneer factor ChIP-ePENS analysis (Corresponding to **Figure 4 & Figure 5**)
 #### Alignment by bowtie2
 $ bowtie2 -v 3 -k 2 -m 1 -p 15 --fr -I 20 -X 400 -S /data/reference/hg19 -1 /data/ChIP-ePEST/GATA2_veh_ChipePEST_L005_R1.fastq -2 /data/ChIP-ePEST/GATA2_veh_ChipePEST_L005_R2.fastq /data/ChIP-ePEST/vehLNCaP_GATA2_ChipePEST.R1R2.Paired.sam
 

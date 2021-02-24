@@ -41,7 +41,8 @@ Potential pioneer factors with activation of treatment condition for detecing fu
 
 
 
-##  Step 4: CHIP-ePENS Border Calling Workflow (Corresponding to Figure 4 & Figure 5)
+##  Step 4: ChIP-ePENS Border Calling Workflow 
+Pioneer factor ChIP-ePENS analysis (Corresponding to Figure 4 & Figure 5)
 #### Alignment by bowtie2
 $ bowtie2 -v 3 -k 2 -m 1 -p 15 --fr -I 20 -X 400 -S /data/reference/hg19 -1 /data/ChIP-ePEST/GATA2_veh_ChipePEST_L005_R1.fastq -2 /data/ChIP-ePEST/GATA2_veh_ChipePEST_L005_R2.fastq /data/ChIP-ePEST/vehLNCaP_GATA2_ChipePEST.R1R2.Paired.sam
 

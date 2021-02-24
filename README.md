@@ -17,6 +17,19 @@ __Required libraries:__
 
 ## Step 1: Nucleosome positioning and spacing detection.
 MNase-seq data with MNase-ChIP-seq datasets were preferred for this pipeline (Corresponding to Figure 1).
+
+####
+$ python NucDetect.py -i <input.bed> -t <S/P> -o <output_path/filename>  
+ 
+
+
+
+Arguments |   ..  
+ ---- | -----   
+-i, --input | inputfile in sorted BED format.  
+-o, --output | outputfile path and file name.  
+-t, --type | S: single-end, P: pair-end, Default as "S".    
+
 #### The nucleosome results columns are as following:
 Chrid 	Start 	End	Index_No Length Height AUC Shape -log10(p-value)
 

@@ -8,12 +8,12 @@ Nuc-PF is a collection of tools for training nucleosome footprint with multiple 
 Nuc-PF is written in python as several scripts and should run on any x86 64-bit Linux system, however a computer with several gigabytes of RAM is strongly recommended to avoid an out-of-memory error.
 
 Required libraries
-numpy     (v1.20) 
-scipy     (v1.6.1) 
-pysam     (v0.15.0) 
-cement    (v2.10.2) 
-treelib   (v1.5.5) 
-networkx  (v2.5)
+numpy     (v1.20)    http://www.numpy.org/
+scipy     (v1.6.1)   http://www.scipy.org/
+pysam     (v0.15.0)  https://github.com/pysam-developers/pysam
+cement    (v2.10.2)  http://cement.readthedocs.org/
+treelib   (v1.5.5)   https://github.com/caesar0301/treelib
+networkx  (v2.5)     https://networkx.github.io/
 
 ## Step 1: Nucleosome positioning and spacing detection.
 MNase-seq data with MNase-ChIP-seq datasets were preferred for this pipeline (Corresponding to Figure 1).

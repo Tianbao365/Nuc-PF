@@ -14,17 +14,15 @@ Required libraries
 MNase-seq data with MNase-ChIP-seq datasets were preferred for this pipeline (Corresponding to Figure 1).
 
 
-## Step 1: Nucleosome positioning and spacing detection.
+## Step 2: Nucleosome State Assignments.
 MNase-ChIP-seq datasets were generated for nucleosome footprint detection and nucleosome states (Corresponding to Figure 2)
 
+## Step 3: Transcript facort associated with dynamic nucleosome re-organization.
+Potential pioneer factors with activation of treatment condition for detecing functional nucleosome regulators.
 
 
 
-
-
-
-
-##  Border Calling Workflow (Corresponding to Figure 4 & Figure 5)
+##  Step 4: CHIP-ePENS Border Calling Workflow (Corresponding to Figure 4 & Figure 5)
 #### Alignment by bowtie2
 $ bowtie2 -v 3 -k 2 -m 1 -p 15 --fr -I 20 -X 400 -S /data/reference/hg19 -1 /data/ChIP-ePEST/GATA2_veh_ChipePEST_L005_R1.fastq -2 /data/ChIP-ePEST/GATA2_veh_ChipePEST_L005_R2.fastq /data/ChIP-ePEST/vehLNCaP_GATA2_ChipePEST.R1R2.Paired.sam
 

@@ -3,6 +3,8 @@
 
 Nuc-PF is a collection of tools for training nucleosome footprint with multiple histone modification datasets to find potential pioneer factor regulations. We have used Nuc-PF successfully to find GATA2 as pioneer factor in LNCap cell lines. If you wish to focus on PF-associated states (downstream of Nuc-PF), we recommend that only the PF of interest be used, although Nuc-PF supports multiple PFs.
 
+![Pipeline_V1](https://user-images.githubusercontent.com/17072186/111445001-eb978100-8745-11eb-9a9c-0afa8e3da56c.png)
+
 ## Quick Start & Dependencies
 
 Nuc-PF is written in python as several scripts and should run on any x86 64-bit Linux system, however a computer with several gigabytes of RAM is strongly recommended to avoid an out-of-memory error.

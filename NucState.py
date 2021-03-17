@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
-import random
+import sys
+import numpy as np
+import sklearn
+
+from sklearn.ensemble import RandomForest
+from math import log
+from joblib import Parallel
+from scipy.special import xlogy
 
 class State_test:
     def greater( background , X ):

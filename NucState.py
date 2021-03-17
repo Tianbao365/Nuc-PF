@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import sys
 import numpy as np
-import sklearn
 
 from sklearn.ensemble import RandomForest
 from math import log

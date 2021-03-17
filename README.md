@@ -36,6 +36,8 @@ Chrid 	Start 	End	Index_No Length Height AUC Shape -log10(p-value)
 ## Step 2: Nucleosome State Assignments.
 MNase-ChIP-seq datasets were generated for nucleosome footprint detection and nucleosome states (Corresponding to **Figure 2**).
 
+$ python NucState.py -p <thread_number> -i <Nuc_position_information.bed>  -o <State_assign_results>  
+
 ## Step 3: Transcript facort associated with dynamic nucleosome re-organization.
 Potential pioneer factors with activation of treatment condition for detecing functional nucleosome regulators (Corresponding to **Figure 3**).
 

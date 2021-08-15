@@ -40,7 +40,7 @@ MNase-ChIP-seq datasets were generated for nucleosome footprint detection and nu
 
 $ python NucGroup.py -g <Nuc_position_information.bed> -m {<histone marker_1> ; <histone marker_2>...} -o <Nuc_group_information.bed>.
 
-$ python NucState.py -p <thread_number> -i <Nuc_group_information.bed> -o <State_assign_results> .
+$ python NucState.py -p <thread_number> -i <Nuc_group_information.bed> -o <State_assign_results>.
 
 ## Step 3: Transcript factor associated with dynamic nucleosome re-organization.
 Potential pioneer factors with activation of treatment condition for detecing functional nucleosome regulators (Corresponding to **Figure 3**).
@@ -50,15 +50,15 @@ Potential pioneer factors with activation of treatment condition for detecing fu
 ##  Step 4: ChIP-ePENS Border Calling Workflow 
 Pioneer factor ChIP-ePENS analysis (Corresponding to **Figure 4 & Figure 5**)
 #### Alignment by bowtie2
-$ bowtie2 -v 3 -k 2 -m 1 -p 15 --fr -I 20 -X 400 -S /data/reference/hg19 -1 /data/ChIP-ePEST/GATA2_veh_ChipePEST_L005_R1.fastq -2 /data/ChIP-ePEST/GATA2_veh_ChipePEST_L005_R2.fastq /data/ChIP-ePEST/vehLNCaP_GATA2_ChipePEST.R1R2.Paired.sam
+$ bowtie2 -v 3 -k 2 -m 1 -p 15 --fr -I 20 -X 400 -S /data/reference/hg19 -1 /data/ChIP-ePENs/GATA2_veh_ChIP-ePENs_R1.fastq -2 /data/ChIP-ePENs/GATA2_veh_ChIP-ePENs_R2.fastq /data/ChIP-ePENs/GATA2_veh_ChIP-ePENs.sam
 
-#### Preparation for ePEST input
-$ samtools view -bhS -q 30 /data/ChIP-ePEST/vehLNCaP_GATA2_ChipePEST.R1R2.Paired.sam -o /data/ChIP-ePEST/vehLNCaP_GATA2_ChipePEST.R1R2.Paired.bam 
+#### Preparation for ePENs input
+$ samtools view -bhS -q 30 /data/ChIP-ePENs/GATA2_veh_ChIP-ePENs.sam -o /data/ChIP-ePENs/GATA2_veh_ChIP-ePENs.bam 
 
-#### ChIP-ePEST border calling by ePEST
-$ python ePEST.py  -D True -p 1e-8 -R 25  -t 12 -c 0.05 -k 2.0 -o ePEST_vehFOXA1 /data/yez/Projects/ChIP-exo/vehLNCaP_FoxA1_ChipEXO.R1R2.Paired.Align.bam
+#### ChIP-ePENS border calling by ePENs
+$ python ePEST.py -D True -p 1e-8 -R 25  -t 12 -c 0.05 -k 2.0 -o ChIP-ePENs_results_GATA2_veh /data/ChIP-ePENs/GATA2_veh_ChIP-ePENs.bam
 
-#### The results columns of ePEST could be explained by following:
+#### The results columns of ePENs could be explained by following:
 Chrid 	Start 	End	Bordername 	Depth	Strand	Chernoff	Peakid	Compid	Pnb
 
 

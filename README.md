@@ -56,7 +56,7 @@ $ bowtie2 -v 3 -k 2 -m 1 -p 15 --fr -I 20 -X 400 -S /data/reference/hg19 -1 /dat
 $ samtools view -bhS -q 30 /data/ChIP-ePENs/GATA2_veh_ChIP-ePENs.sam -o /data/ChIP-ePENs/GATA2_veh_ChIP-ePENs.bam 
 
 #### ChIP-ePENS border calling by ePENs
-$ python ePEST.py -D True -p 1e-8 -R 25  -t 12 -c 0.05 -k 2.0 -o ChIP-ePENs_results_GATA2_veh /data/ChIP-ePENs/GATA2_veh_ChIP-ePENs.bam
+$ python ePENs.py -D True -p 1e-8 -R 25  -t 12 -c 0.05 -k 2.0 -o ChIP-ePENs_results_GATA2_veh /data/ChIP-ePENs/GATA2_veh_ChIP-ePENs.bam
 
 #### The results columns of ePENs could be explained by following:
 Chrid 	Start 	End	Bordername 	Depth	Strand	Chernoff	Peakid	Compid	Pnb

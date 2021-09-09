@@ -21,9 +21,10 @@ __Required libraries:__
 MNase-seq data with MNase-ChIP-seq datasets were preferred for this pipeline (Corresponding to **Figure 1**).
 We did the genome-wide detection of nucleosome positions from MNase-seq data, as well as identifies sharper nucleosome profiles for nucleosome spacing detection.
 ####
+$ python pearson_correlation.py replicate_1 replicate_2 > Pearson_results
+
 $ python NucDetect.py -i <input.bed> -t <S/P> -o <output_path/filename>  
  
-
 
 
 Arguments |   ..  
@@ -38,14 +39,15 @@ Chrid 	Start 	End	Index_No Length Height AUC Shape -log10(p-value)
 ## Step 2: Nucleosome grouping and Nuc_State Assignments.
 MNase-ChIP-seq datasets were generated for nucleosome footprint detection and nucleosome states (Corresponding to **Figure 2**).
 
-$ python NucGroup.py -g <Nuc_position_information.bed> -m { <histone marker_1> ; <histone marker_2> ...} -o <Nuc_group_information.bed>.
+$ python NucGroup.py -g <Nuc_position_information.bed> -m [<histone_marker_1> <histone_marker_2>...] -o <Nuc_group_information.bed>.
 
 $ python NucState.py -p <thread_number> -i <Nuc_group_information.bed> -o <State_assign_results>.
 
 ## Step 3: Transcript factor associated with dynamic nucleosome re-organization.
 Potential pioneer factors with activation of treatment condition for detecing functional nucleosome regulators (Corresponding to **Figure 3**).
 
-
+$ python 
+$ python Plots.py <State_assign_results>
 
 ##  Step 4: ChIP-ePENS Border Calling Workflow 
 Pioneer factor ChIP-ePENS analysis (Corresponding to **Figure 4 & Figure 5**)
@@ -56,7 +58,7 @@ $ bowtie2 -v 3 -k 2 -m 1 -p 15 --fr -I 20 -X 400 -S /data/reference/hg19 -1 /dat
 $ samtools view -bhS -q 30 /data/ChIP-ePENs/GATA2_veh_ChIP-ePENs.sam -o /data/ChIP-ePENs/GATA2_veh_ChIP-ePENs.bam 
 
 #### ChIP-ePENS border calling by ePENs
-$ python ePENs.py -D True -p 1e-8 -R 25  -t 12 -c 0.05 -k 2.0 -o ChIP-ePENs_results_GATA2_veh /data/ChIP-ePENs/GATA2_veh_ChIP-ePENs.bam
+$ python ePENS.py -D True -p 1e-8 -R 25  -t 12 -c 0.05 -k 2.0 -o ChIP-ePENs_results_GATA2_veh /data/ChIP-ePENs/GATA2_veh_ChIP-ePENs.bam
 
 #### The results columns of ePENs could be explained by following:
 Chrid 	Start 	End	Bordername 	Depth	Strand	Chernoff	Peakid	Compid	Pnb

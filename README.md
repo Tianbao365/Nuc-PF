@@ -47,7 +47,7 @@ $ python NucState.py -p <thread_number> -i <Nuc_group_information.bed> -o <State
 Potential pioneer factors with activation of treatment condition for detecing functional nucleosome regulators (Corresponding to **Figure 3**).
 
 $ python 
-$ python Plots.py <TF_binding peaks> <State_assign_results>
+$ python TF_nuc_plots.py <TF_binding peaks> <State_assign_results>
 
 ##  Step 4: ChIP-ePENS Border Calling Workflow 
 Pioneer factor ChIP-ePENS analysis (Corresponding to **Figure 4 & Figure 5**)
